@@ -9,6 +9,7 @@ print("Connected to redis")
 
 @app.route('/health', methods=['GET'])
 def health():
+    r.ping()
     return "OK", 200
 
 
