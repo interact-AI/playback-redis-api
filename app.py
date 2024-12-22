@@ -15,9 +15,10 @@ def health():
 @app.route('/callevent', methods=['POST'])
 def callevent():
 
-    body = request.get_json()
-    body = body[0]
     print("\nReceived ACS callback")
+    body = request.get_json()
+    print("Event normal body: ", body)
+    body = body[0]
     event_type = body['type']
 
     print("Event type: ", event_type)
